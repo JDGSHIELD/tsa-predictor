@@ -6,3 +6,4 @@ backend/scraper.log
 frontend/node_modules/
 frontend/dist/
 .env
+backend/.token
