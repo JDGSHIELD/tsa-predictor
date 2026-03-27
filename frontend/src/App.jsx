@@ -269,6 +269,7 @@ export default function App() {
         const winProbability = recommendedSide === "YES" ? modelProbability : 1 - modelProbability;
         const expectedValue = winProbability * (1 - contractPrice) - (1 - winProbability) * contractPrice;
         const recommendedStake = Math.abs(edge) * KALSHI_BANKROLL * KALSHI_K_FACTOR;
+        const opportunityScore = Math.round(Math.abs(edge) * 100);
 
         return {
           ...market,
@@ -278,6 +279,7 @@ export default function App() {
           contractPrice,
           expectedValue,
           recommendedStake,
+          opportunityScore,
         };
       })
       .filter(Boolean)
@@ -402,6 +404,9 @@ export default function App() {
                   <div className="market-row market-meta">
                     <span>{market.recommendedSide} edge {formatSignedProbability(Math.abs(market.edge))}</span>
                     <span>Stake ${market.recommendedStake.toFixed(2)}</span>
+                  </div>
+                  <div className="market-row market-meta">
+                    <span>Opportunity score {market.opportunityScore}/100</span>
                   </div>
                   <p className="market-note">
                     Bet {market.recommendedSide}. Expected value: {formatSignedPercent(market.expectedValue)} per $1 contract.
