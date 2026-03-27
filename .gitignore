@@ -1,0 +1,8 @@
+backend/__pycache__/
+backend/*.pyc
+backend/.venv/
+backend/tsa_data.db
+backend/scraper.log
+frontend/node_modules/
+frontend/dist/
+.env

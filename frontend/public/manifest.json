@@ -1,0 +1,10 @@
+{
+  "name": "TSA Forecast",
+  "short_name": "TSA",
+  "theme_color": "#060a14",
+  "background_color": "#060a14",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "icons": []
+}

@@ -1,0 +1,351 @@
+:root {
+  color-scheme: dark;
+  font-family: "Source Sans 3", sans-serif;
+  background: #060a14;
+  color: #d9e7ff;
+  --bg: #060a14;
+  --card: #0c1425;
+  --border: #1e3a5f;
+  --accent: #60a5fa;
+  --muted: #7c93b8;
+  --glow: rgba(96, 165, 250, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(96, 165, 250, 0.18), transparent 25%),
+    linear-gradient(180deg, #071120 0%, #060a14 100%);
+  min-height: 100vh;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 16px 14px 40px;
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(12, 20, 37, 0.96), rgba(8, 15, 28, 0.98));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 0 18px 46px rgba(2, 8, 20, 0.44);
+}
+
+.status-card {
+  display: grid;
+  gap: 12px;
+  align-items: start;
+}
+
+.gear-button {
+  justify-self: end;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(96, 165, 250, 0.08);
+  color: var(--accent);
+}
+
+.status-meta {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  font-size: 0.72rem;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+.status-copy,
+.section-head span,
+.settings-note {
+  color: var(--muted);
+}
+
+.settings-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.settings-panel label {
+  display: grid;
+  gap: 8px;
+  color: #e8f0ff;
+}
+
+.settings-panel select,
+.settings-panel input[type="range"] {
+  width: 100%;
+}
+
+.hero-card {
+  display: grid;
+  gap: 16px;
+}
+
+.hero-top {
+  display: grid;
+  gap: 14px;
+}
+
+.hero-number,
+.metric strong,
+.day-tile strong {
+  font-family: "Fira Code", monospace;
+}
+
+.hero-number {
+  font-size: clamp(2.3rem, 10vw, 4rem);
+  line-height: 1;
+}
+
+.hero-note {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.confidence-meter {
+  display: grid;
+  gap: 8px;
+}
+
+.meter-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #08101d;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.market-card {
+  display: grid;
+  gap: 14px;
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.market-tile {
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(96, 165, 250, 0.14);
+  background: rgba(96, 165, 250, 0.05);
+  display: grid;
+  gap: 10px;
+}
+
+.market-tile.positive {
+  border-color: rgba(52, 211, 153, 0.24);
+  background: linear-gradient(180deg, rgba(52, 211, 153, 0.11), rgba(10, 16, 28, 0.92));
+}
+
+.market-tile.negative {
+  border-color: rgba(251, 146, 60, 0.18);
+}
+
+.market-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.market-row strong {
+  font-size: 0.98rem;
+}
+
+.market-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.market-note {
+  color: #d5e4ff;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.metric {
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(96, 165, 250, 0.06);
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  display: grid;
+  gap: 6px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.day-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.day-tile {
+  min-width: 84px;
+  padding: 12px 10px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(10, 16, 28, 0.9);
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.day-tile span {
+  font-size: 0.82rem;
+}
+
+.day-tile strong {
+  display: block;
+  font-size: clamp(0.82rem, 2.6vw, 0.98rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.day-tile.known {
+  background: linear-gradient(180deg, rgba(96, 165, 250, 0.18), rgba(15, 25, 47, 0.96));
+}
+
+.day-tile.glow {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.chart-card {
+  display: grid;
+  gap: 14px;
+}
+
+.section-head {
+  display: grid;
+  gap: 4px;
+}
+
+.chart-frame {
+  height: 250px;
+}
+
+.chart-frame.compact {
+  height: 180px;
+}
+
+.empty-state {
+  min-height: 40vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--muted);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(96, 165, 250, 0);
+  }
+}
+
+@media (min-width: 720px) {
+  .app-shell {
+    padding: 28px 24px 56px;
+    gap: 18px;
+  }
+
+  .status-card {
+    grid-template-columns: 1fr auto;
+  }
+
+  .status-meta {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-top {
+    grid-template-columns: 1fr 220px;
+    align-items: end;
+  }
+}
+
+@media (max-width: 430px) {
+  .market-grid,
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-tile {
+    min-width: 76px;
+    padding: 10px 8px;
+    gap: 6px;
+  }
+
+  .day-tile span {
+    font-size: 0.76rem;
+  }
+
+  .day-tile strong {
+    font-size: 0.78rem;
+  }
+}
