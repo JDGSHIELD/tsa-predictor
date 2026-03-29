@@ -277,12 +277,19 @@ export default function App() {
           edge,
           recommendedSide,
           contractPrice,
+          winProbability,
           expectedValue,
           recommendedStake,
           opportunityScore,
         };
       })
       .filter(Boolean)
+      .filter(
+        (market) =>
+          market.winProbability >= 0.2 &&
+          Math.abs(market.edge) >= 0.05 &&
+          market.expectedValue > 0
+      )
       .sort((a, b) => Math.abs(b.edge) - Math.abs(a.edge))
       .slice(0, 4);
   }, [kalshiMarkets, prediction, activeTarget]);
